@@ -2,14 +2,16 @@
 
 using namespace std;
 
-void bubblesort(int intArray[], int arraySize);
+void bubbleSort(int intArray[], int arraySize);
 int factorial(int x);
 int checkWord(string word1, string word2);
 int checkWord(string word1, string word2, int x);
 
 int main() {
+    //declarando un arreglo con el cual hacer bubblesort
     int arreglo[6] = {5, 4, 3, 2, 6};
-    bubblesort(arreglo, 6);
+    bubbleSort(arreglo, 6);
+    //imprimir arreglo ordenado
     for(int i = 0; i < 6; i++)
         cout << arreglo[i] << endl;
     cout << factorial(5) << endl;
@@ -18,7 +20,7 @@ int main() {
 }
 
 //ordenar arreglo de menor a mayor
-void bubblesort(int intArray[], int arraySize) {
+void bubbleSort(int intArray[], int arraySize) {
     int temp;
     for(int i = 0; i < arraySize - 1; i++) {
         for(int j = 0; j < arraySize-i-1; j++) {
@@ -46,7 +48,6 @@ int checkWord(string word1, string word2) {
 }
 
 int checkWord(string word1, string word2, int x) {
-
     if(word1 == word2)
         x++;
     if(word1.size() >= word2.size())
