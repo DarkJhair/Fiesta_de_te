@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Documento.cpp
+Documento.h
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Documento.h
+
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Documento.h
+iostream
+-
+
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Impresora.cpp
+Impresora.h
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Impresora.h
+
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Impresora.h
+Documento.h
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Documento.h
+
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/main.cpp
+iostream
+-
+Documento.h
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Documento.h
+Impresora.h
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/Impresora.h
+

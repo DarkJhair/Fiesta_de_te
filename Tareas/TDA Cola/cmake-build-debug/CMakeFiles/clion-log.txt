@@ -1,0 +1,4 @@
+"C:\Program Files\JetBrains\CLion 2017.2\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Unitec\Estructura de Datos 1 (segundo intento)\Fiesta de te\Tareas\TDA Cola"
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/cmake-build-debug

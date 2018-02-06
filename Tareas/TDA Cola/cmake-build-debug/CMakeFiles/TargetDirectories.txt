@@ -1,0 +1,3 @@
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/cmake-build-debug/CMakeFiles/TDA_Cola.dir
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Tareas/TDA Cola/cmake-build-debug/CMakeFiles/rebuild_cache.dir
