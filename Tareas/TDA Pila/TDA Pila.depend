@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1517976197 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\tda pila\nodo.cpp
+	"Nodo.h"
+
+1517976197 c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\tda pila\nodo.h
+	<iostream>
+
+1517976197 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\tda pila\stack.cpp
+	"Stack.h"
+
+1517976197 c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\tda pila\stack.h
+	"Nodo.h"
+
