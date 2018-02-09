@@ -38,7 +38,7 @@ void Stack::push(char operador) {
     }
 }
 
-/*si el numero del nodo que esta encima de la cola es nulo, significa
+/*si el numero del nodo que esta encima de la pila es nulo, significa
  * que el nodo contiene un operador, asi que procedera a hacer la
  * operacion aritmetica correspondiente */
 void Stack::operate() {
