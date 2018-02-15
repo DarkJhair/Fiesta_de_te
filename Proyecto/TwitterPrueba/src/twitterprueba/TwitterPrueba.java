@@ -44,6 +44,7 @@ public class TwitterPrueba {
         File file = new File("tweets.txt");
         try {
             FileWriter fw = new FileWriter(file);
+            fw.write("");
          
          Query que= new Query("unitec");
          QueryResult result;
