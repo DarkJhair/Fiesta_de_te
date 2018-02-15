@@ -16,7 +16,8 @@ import twitter4j.Status;
 import twitter4j.TwitterException;
 import twitter4j.conf.ConfigurationBuilder;
 
-
+import java.io.*;
+import sun.awt.FwDispatcher;
 
 /**
  *
@@ -39,11 +40,14 @@ public class TwitterPrueba {
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
         String usuario="jhair001";
+        //aqui ponemos el file donde guardamos los tweets
+        File file = new File("tweets.txt");
+        try {
+            FileWriter fw = new FileWriter(file);
          
          Query que= new Query("unitec");
          QueryResult result;
        
-        try {
         result= twitter.search(que);
         List<Status>statuses=result.getTweets();
         User user = twitter.showUser("Jhair001");
@@ -55,7 +59,10 @@ public class TwitterPrueba {
             for (Status status : statuses) {
                 System.out.println(status.getUser().getScreenName()+"<<<  >>> "+status.getText()+"<<<  >>> "+status.getUser().getTimeZone()
                         +"<<<  >>> "+status.getUser().getName());
+                fw.write(status.getUser().getScreenName()+"<<<  >>> "+status.getText()+"<<<  >>> "+status.getUser().getTimeZone()
+                        +"<<<  >>> "+status.getUser().getName());
             }
+            fw.close();
                 //System.out.println(tweet);   
            /* for (int i = 0; i < 5; i++) {
                 System.out.println(user.getName()+"<<<  >>> "+user.getScreenName() +"<<<  >>> "+ user.getStatus());
@@ -66,6 +73,9 @@ public class TwitterPrueba {
         } catch (TwitterException te) {
             System.out.println("Failed to search tweets: " + te.getMessage());
             System.exit(-1);
+        }
+        catch (IOException e) {
+            
         }
         /*
        
