@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1518042421 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\simuladorlista\main.cpp
+1518901789 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\simuladorlista\main.cpp
 	<iostream>
 	"ArbolMangos.h"
 
@@ -9,7 +9,7 @@
 1518011747 c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\simuladorlista\mango.h
 	<iostream>
 
-1518042584 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\simuladorlista\arbolmangos.cpp
+1518901805 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\simuladorlista\arbolmangos.cpp
 	"Mango.h"
 	"ArbolMangos.h"
 
