@@ -13,13 +13,15 @@ ArbolMangos::ArbolMangos(int x) {
     tree.setPosition(x, 600);
     first = NULL;
     cantidadMangos = 0;
+    growth = 1;
 }
 
 ArbolMangos::~ArbolMangos() {
 }
 
 void ArbolMangos::addMango(int peso, int x, int y) {
-    insertMango(peso, cantidadMangos, x, y);
+    if(growth == 2)
+        insertMango(peso, cantidadMangos, x, y);
 }
 
 void ArbolMangos::addMango(Mango *mango) {
@@ -117,7 +119,14 @@ Sprite ArbolMangos::getSprite() {
 }
 
 void ArbolMangos::grow() {
-    tree.setTexture(t3);
-    tree.setPosition(tree.getPosition().x, 300);
-    tree.setTextureRect(IntRect(0, 0, 180, 350));
+    if(growth == 1) {
+        tree.setTexture(t3);
+        tree.setPosition(tree.getPosition().x, 300);
+        tree.setTextureRect(IntRect(0, 0, 180, 350));
+        growth++;
+    }
+}
+
+int ArbolMangos::getGrowth() {
+    return growth;
 }

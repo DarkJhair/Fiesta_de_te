@@ -25,23 +25,30 @@ Mage::Mage() {
 
 int main()
 {
-    cout << "\tInstrucciones:" << endl;
-    cout << "Click derecho en un arbol para hacer que crezca" << endl;
-    cout << "Click izquierdo en un arbol para agregar un mango en el" << endl << endl;
+    cout << "\t\tInstrucciones:" << endl;
+    cout << "Mueve a black mage con las arrow keys" << endl;
+    cout << "Presiona Z para plantar un arbol" << endl;
+    cout << "Presiona X para hacer que un arbol crezca" << endl;
+    cout << "Click izquierdo en un arbol para agregarle un mango, siempre y cuando el arbol este grande" << endl;
+    cout << "Click derecho en un mango para quitarlo de ahi y agregarlo a tu stock" << endl << endl;
     RenderWindow window(sf::VideoMode(1200, 720), "Arboles de mango");
     Texture t, b1, b2, bm;
     t.loadFromFile("images/fondo.png");
-    b1.loadFromFile("images/plant.png");
-    b2.loadFromFile("images/cut.png");
+    Font font;
+    font.loadFromFile("fonts/orange_juice.ttf");
+    Text text;
+    text.setFont(font);
+    text.setColor(Color::Red);
+    text.setCharacterSize(100);
+    text.setString("Ver la consola");
+    text.setPosition(50, 50);
+    text.setCharacterSize(20);
     Sprite fondo(t);
-    Sprite button1(b1);
-    button1.setPosition(20, 20);
-    Sprite button2(b2);
-    button2.setPosition(900, 20);
 
     Mage mage;
     ListaArboles arboles;
-
+    ArbolMangos *arbolTemp;
+    Mango *mangoTemp;
     while (window.isOpen())
     {
         Event event;
@@ -51,6 +58,34 @@ int main()
             if (event.type == Event::Closed)
                 window.close();
             if(event.type == Event::MouseButtonPressed) {
+                for(int i = 0; i < arboles.getSize(); i++) {
+                    ArbolMangos *temp = arboles.get(i);
+                    if(temp->getSprite().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                        if(event.key.code == Mouse::Left) {
+                            window.draw(text);
+                            window.display();
+                            if(temp->getGrowth() == 1)
+                                cout << "No puedes agregar mangos ahi, el arbol aun es muy pequeño" << endl << endl;
+                            else {
+                                int peso;
+                                cout << "Escribe el peso del mango que deseas agregar: " << endl;
+                                cin >> peso;
+                                temp->addMango(peso, mousePosition.x, mousePosition.y);
+                                cout << "Se ha agregado el mango exitosamente al arbol" << endl << endl;
+                            }
+                        }
+                        for(int j = 0; j < temp->getSize(); j++) {
+                            mangoTemp = temp->get(j);
+                            if(mangoTemp->getSprite().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                                if(event.key.code == Mouse::Right) {
+                                    mage.stock.push_back(mangoTemp);
+                                    arbolTemp->deleteMango(j);
+                                    cout << "Se ha quitado el mango del arbol y se ha agregado a tu stock" << endl;
+                                }
+                            }
+                        }
+                    }
+                }
                 //if(event.key.code == Mouse::Right)
 
                 //if(event.key.code == Mouse::Left)
@@ -65,6 +100,9 @@ int main()
                     ArbolMangos* arbol = new ArbolMangos(mage.mageSprite.getPosition().x);
                     arboles.addArbol(arbol);
                 }
+                if(event.key.code == Keyboard::Space) {
+                    cout << mage.stock.size() << endl;
+                }
                 for(int i = 0; i < arboles.getSize(); i++) {
                     ArbolMangos *temp = arboles.get(i);
                     if(mage.mageSprite.getGlobalBounds().contains(temp->getSprite().getPosition().x, temp->getSprite().getPosition().y)) {
@@ -76,10 +114,12 @@ int main()
         }
         window.clear();
         window.draw(fondo);
-        window.draw(button1);
-        window.draw(button2);
         for(int i = 0; i < arboles.getSize(); i++) {
-            window.draw(arboles.get(i)->getSprite());
+            arbolTemp = arboles.get(i);
+            window.draw(arbolTemp->getSprite());
+            for(int j = 0; j < arbolTemp->getSize(); j++) {
+                window.draw(arbolTemp->get(j)->mango);
+            }
         }
         window.draw(mage.mageSprite);
         window.display();

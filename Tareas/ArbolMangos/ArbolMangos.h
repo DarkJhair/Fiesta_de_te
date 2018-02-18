@@ -10,6 +10,7 @@ private:
     sf::Sprite tree;
     Mango *first;
     int cantidadMangos;
+    int growth; //este atributo tendra el numero 1 o 2, el arbol podra crecer solo si este atributo contiene el numero 1
 public:
     ArbolMangos();
     ArbolMangos(int);
@@ -23,6 +24,7 @@ public:
     Mango *get(int);
     sf::Sprite getSprite();
     void grow();
+    int getGrowth();
 };
 
 #endif // ARBOLMANGOS_H_INCLUDED
