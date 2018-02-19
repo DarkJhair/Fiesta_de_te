@@ -426,7 +426,7 @@
 	"ArbolMangos.h"
 	"Mango.h"
 
-1518988797 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\arbolmangos.cpp
+1519011756 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\arbolmangos.cpp
 	"Mango.h"
 	"ArbolMangos.h"
 
@@ -438,7 +438,7 @@
 	<SFML/Graphics.hpp>
 	"Mango.h"
 
-1518984202 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\listaarboles.cpp
+1519011630 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\listaarboles.cpp
 	"ListaArboles.h"
 	<iostream>
 
@@ -450,7 +450,7 @@
 	"ArbolMangos.h"
 	"Mango.h"
 
-1519009792 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\main.cpp
+1519011926 source:c:\unitec\estructura de datos 1 (segundo intento)\fiesta de te\tareas\arbolmangos\main.cpp
 	<iostream>
 	<SFML/Graphics.hpp>
 	<vector>

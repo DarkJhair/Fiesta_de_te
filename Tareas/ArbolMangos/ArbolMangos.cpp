@@ -83,6 +83,14 @@ void ArbolMangos::deleteMango(int posicion) {
         borrar = first;
         first = first->siguiente;
     }
+    else if(posicion == cantidadMangos - 1) {
+        Mango *iterador = first;
+        for(int i = 0; i < posicion - 1; i++)
+            iterador = iterador->siguiente;
+        borrar = iterador->siguiente;
+        delete borrar;
+        iterador->siguiente = NULL;
+    }
     else {
         Mango *iterador = first;
         for(int i = 0; i < posicion - 1; i++)
