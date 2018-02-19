@@ -4,39 +4,10 @@
 #include "Mango.h"
 #include "ListaArboles.h"
 #include "ArbolMangos.h"
+#include "Mage.h"
 
 using namespace std;
 using namespace sf;
-
-
-struct Mage {
-    Texture m;
-    Sprite mageSprite;
-    vector<Mango*> stock;
-    double dinero;
-    void printMass();
-
-    Mage();
-};
-
-Mage::Mage() {
-    m.loadFromFile("images/black_mage4.png");
-    mageSprite.setTexture(m);
-    mageSprite.setPosition(900, 530);
-    dinero = 0;
-}
-
-void Mage::printMass() {
-    for(int i = 0; i < stock.size(); i++)
-        cout << stock[i]->peso << endl;
-}
-
-void sellMangos(vector<Mango*> mangos, Mage mage) {
-    int mass, price;
-    mass = mangos[mangos.size()-1]->peso;
-    price = 3*price;
-    mage.dinero += price;
-}
 
 int main()
 {
@@ -76,26 +47,26 @@ int main()
             //click izquierdo para agregar mangos a un arbol, click derecho para quitar los mangos de un arbol
             if(event.type == Event::MouseButtonPressed) {
                 for(int i = 0; i < arboles.getSize(); i++) {
-                    ArbolMangos *temp = arboles.get(i);
-                    if(temp->getSprite().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
+                    arbolTemp = arboles.get(i);
+                    if(arbolTemp->getSprite().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
                         if(event.key.code == Mouse::Left) {
                             window.draw(text);
                             window.display();
-                            if(temp->getGrowth() == 1)
+                            if(arbolTemp->getGrowth() == 1)
                                 cout << "No puedes agregar mangos ahi, el arbol aun es muy pequeño" << endl << endl;
                             else {
                                 int peso;
                                 cout << "Escribe el peso del mango que deseas agregar: " << endl;
                                 cin >> peso;
-                                temp->addMango(peso, mousePosition.x, mousePosition.y);
+                                arbolTemp->addMango(peso, mousePosition.x, mousePosition.y);
                                 cout << "Se ha agregado el mango exitosamente al arbol" << endl << endl;
                             }
                         }
-                        for(int j = 0; j < temp->getSize(); j++) {
-                            mangoTemp = temp->get(j);
+                        for(int j = 0; j < arbolTemp->getSize(); j++) {
+                            mangoTemp = arbolTemp->get(j);
                             if(mangoTemp->getSprite().getGlobalBounds().contains(mousePosition.x, mousePosition.y)) {
                                 if(event.key.code == Mouse::Right) {
-                                    mage.stock.push_back(mangoTemp);
+                                    mage.stock.push(mangoTemp);
                                     arbolTemp->deleteMango(j);
                                     cout << "Se ha quitado el mango del arbol y se ha agregado a tu stock" << endl << endl;
                                 }
@@ -118,7 +89,9 @@ int main()
                         cout << "1. Si\n2.No" << endl;
                         cin >> option;
                         if(option == 1) {
-                            cout << "coming soon" << endl << endl;
+                            //cout << "coming soon" << endl << endl;
+                            mage.sellMangos();
+                            cout << "Se han vendido todos tus mangos con exito, revisa tu dinero" << endl << endl;
                         }
                     }
                 }

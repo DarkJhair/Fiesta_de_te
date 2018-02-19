@@ -53,6 +53,10 @@
 		<Unit filename="ArbolMangos.h" />
 		<Unit filename="ListaArboles.cpp" />
 		<Unit filename="ListaArboles.h" />
+		<Unit filename="Mage.cpp" />
+		<Unit filename="Mage.h">
+			<Option target="Debug" />
+		</Unit>
 		<Unit filename="Mango.cpp" />
 		<Unit filename="Mango.h">
 			<Option target="Debug" />
