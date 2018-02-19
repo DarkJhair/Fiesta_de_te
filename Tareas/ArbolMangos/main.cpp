@@ -80,7 +80,7 @@ int main()
                                 if(event.key.code == Mouse::Right) {
                                     mage.stock.push_back(mangoTemp);
                                     arbolTemp->deleteMango(j);
-                                    cout << "Se ha quitado el mango del arbol y se ha agregado a tu stock" << endl;
+                                    cout << "Se ha quitado el mango del arbol y se ha agregado a tu stock" << endl << endl;
                                 }
                             }
                         }
@@ -101,13 +101,22 @@ int main()
                     arboles.addArbol(arbol);
                 }
                 if(event.key.code == Keyboard::Space) {
-                    cout << mage.stock.size() << endl;
+                    cout << "A continuacion se mostrara cuantos mangos has recogido de tus arboles" << endl;
+                    cout << "Tienes en tu inventario " << mage.stock.size() << " mangos" << endl << endl;
                 }
                 for(int i = 0; i < arboles.getSize(); i++) {
-                    ArbolMangos *temp = arboles.get(i);
-                    if(mage.mageSprite.getGlobalBounds().contains(temp->getSprite().getPosition().x, temp->getSprite().getPosition().y)) {
+                    arbolTemp = arboles.get(i);
+                    if(mage.mageSprite.getGlobalBounds().contains(arbolTemp->getSprite().getPosition().x, arbolTemp->getSprite().getPosition().y)) {
                         if(event.key.code == Keyboard::X)
-                            temp->grow();
+                            arbolTemp->grow();
+                        if(event.key.code == Keyboard::C) {
+                            if(arbolTemp->getSize() == 0) {
+                                arboles.deleteArbol(i);
+                            }
+                            else {
+                                cout << "No puedes quitar el arbol sin antes haber bajado los mangos de ahi" << endl << endl;
+                            }
+                        }
                     }
                 }
             }

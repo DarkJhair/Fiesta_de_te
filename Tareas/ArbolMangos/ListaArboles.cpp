@@ -57,6 +57,14 @@ void ListaArboles::deleteArbol(int posicion) {
         borrar = first;
         first = first->siguiente;
     }
+    else if(posicion == cantidadArboles - 1) {
+        Nodo *iterador = first;
+        for(int i = 0; i < posicion - 1; i++)
+            iterador = iterador->siguiente;
+        borrar = iterador->siguiente;
+        delete borrar;
+        iterador->siguiente = NULL;
+    }
     else {
         Nodo *iterador = first;
         for(int i = 0; i < posicion - 1; i++)
