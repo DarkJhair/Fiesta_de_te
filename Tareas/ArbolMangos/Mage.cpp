@@ -10,18 +10,15 @@ Mage::Mage() {
     dinero = 0;
 }
 
-/*
-void Mage::printMass() {
-    for(int i = 0; i < stock.size(); i++)
-        cout << stock[i]->peso << endl;
-}
-*/
 void Mage::sellMangos() {
     int mass, price;
     while(!stock.empty()) {
         mass = stock.top()->peso;
-        price = 3*price;
+        cout << "masa es: " << mass << endl;
+        price = mass*3;
+        cout << "el precio es: " << price << endl;
         dinero += price;
+        cout << "dinero es: " << dinero << endl;
         stock.pop();
     }
 }

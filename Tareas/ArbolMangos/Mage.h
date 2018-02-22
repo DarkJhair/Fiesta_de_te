@@ -15,6 +15,4 @@ struct Mage {
     Mage();
 };
 
-
-
 #endif // MAGE_H_INCLUDED
