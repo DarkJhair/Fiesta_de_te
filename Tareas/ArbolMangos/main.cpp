@@ -75,7 +75,7 @@ int main()
                                 if(event.key.code == Mouse::Right) {
                                     mage->stock.push(mangoTemp);
                                     arbolTemp->deleteMango(j);
-                                    cout << mage->stock.top()->peso << endl;
+                                    //cout << "El peso del mango que se ha agregado a la pila es: " << mage->stock[0]->peso << endl;
                                     cout << "Se ha quitado el mango del arbol y se ha agregado a tu stock" << endl << endl;
                                 }
                             }
@@ -93,15 +93,19 @@ int main()
                             cin >> option;
                             if(option == 1) {
                                 //cout << "coming soon" << endl << endl;
-                                //mage->sellMangos();
+                                mage->sellMangos();
+                                /*
                                 int price, mass;
-                                while(!mage->stock.empty()) {
-                                    mass = mage->stock.top()->peso;
-                                    price = mass * 2;
-                                    mage->dinero += price;
-                                    mage->stock.pop();
+                                for(int i = 0; i < mage->stock.size(); i++) {
+                                    cout << "El metodo stock.top->peso devuelve: " << mage->stock[0]->peso << endl;
+                                    mass = mage->stock[i]->peso;
+                                    cout << "mass tiene almacenado ahora " << mass << endl;
+                                    //price = mass * 2;
+                                    mage->dinero += mass;
                                 }
+                                */
                                 cout << "Se han vendido todos tus mangos con exito, revisa tu dinero" << endl << endl;
+
                             }
                         }
                     }
@@ -117,6 +121,7 @@ int main()
             if(event.type == Event::KeyPressed) {
                 if(event.key.code == Keyboard::Left)
                     mage->mageSprite.move(-5, 0);
+
                 if(event.key.code == Keyboard::Right)
                     mage->mageSprite.move(5, 0);
                 if(event.key.code == Keyboard::Z) {

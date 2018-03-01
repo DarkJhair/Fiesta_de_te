@@ -11,13 +11,13 @@ Mage::Mage() {
 }
 
 void Mage::sellMangos() {
-    int mass, price;
+    int mass = 0;
+    int price = 0;
     while(!stock.empty()) {
         mass = stock.top()->peso;
         cout << "masa es: " << mass << endl;
-        price = mass*3;
-        cout << "el precio es: " << price << endl;
-        dinero += price;
+        //cout << "el precio es: " << price << endl;
+        dinero += mass * 3;
         cout << "dinero es: " << dinero << endl;
         stock.pop();
     }

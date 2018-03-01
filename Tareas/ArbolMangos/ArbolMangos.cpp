@@ -88,7 +88,7 @@ void ArbolMangos::deleteMango(int posicion) {
         for(int i = 0; i < posicion - 1; i++)
             iterador = iterador->siguiente;
         borrar = iterador->siguiente;
-        delete borrar;
+        //delete borrar;
         iterador->siguiente = NULL;
     }
     else {
@@ -99,7 +99,7 @@ void ArbolMangos::deleteMango(int posicion) {
         iterador->siguiente = borrar->siguiente;
         borrar->siguiente->anterior = iterador;
     }
-    delete borrar;
+    //delete borrar;
     cantidadMangos--;
 }
 
