@@ -17,7 +17,7 @@ void Mage::sellMangos() {
         mass = stock.top()->peso;
         cout << "masa es: " << mass << endl;
         //cout << "el precio es: " << price << endl;
-        dinero += mass * 3;
+        dinero += (mass * 3);
         cout << "dinero es: " << dinero << endl;
         stock.pop();
     }
