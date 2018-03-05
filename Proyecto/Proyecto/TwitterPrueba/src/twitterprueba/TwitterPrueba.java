@@ -17,6 +17,7 @@ import twitter4j.TwitterException;
 import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.*;
+import java.util.Scanner;
 import sun.awt.FwDispatcher;
 
 /**
@@ -42,11 +43,16 @@ public class TwitterPrueba {
         String usuario="jhair001";
         //aqui ponemos el file donde guardamos los tweets
         File file = new File("tweets.txt");
+        //la palabra de los tweets que se quiere buscar
+        File word = new File("word.txt");
+        String fileWord;
         try {
+            Scanner reader = new Scanner(word);
+            fileWord = reader.nextLine(); //se lee la palabra del archivo
             FileWriter fw = new FileWriter(file);
             fw.write("");
          
-         Query que= new Query("unitec");
+         Query que= new Query(fileWord); //se le manda de parametro la palabra
          QueryResult result;
        
         result= twitter.search(que);
@@ -101,10 +107,5 @@ public class TwitterPrueba {
             System.exit(-1);
         }
     */
-       
     }    
-        
-        
-    
-    
 }

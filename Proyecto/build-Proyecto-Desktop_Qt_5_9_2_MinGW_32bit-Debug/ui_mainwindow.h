@@ -14,6 +14,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QHeaderView>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
@@ -31,7 +32,8 @@ public:
     QWidget *centralWidget;
     QPushButton *pushButtonBuscar;
     QTextEdit *textEditTweets;
-    QLineEdit *lineEdit;
+    QLineEdit *lineEditWord;
+    QLabel *label;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -49,9 +51,12 @@ public:
         textEditTweets = new QTextEdit(centralWidget);
         textEditTweets->setObjectName(QStringLiteral("textEditTweets"));
         textEditTweets->setGeometry(QRect(60, 60, 261, 341));
-        lineEdit = new QLineEdit(centralWidget);
-        lineEdit->setObjectName(QStringLiteral("lineEdit"));
-        lineEdit->setGeometry(QRect(360, 310, 113, 20));
+        lineEditWord = new QLineEdit(centralWidget);
+        lineEditWord->setObjectName(QStringLiteral("lineEditWord"));
+        lineEditWord->setGeometry(QRect(360, 310, 113, 20));
+        label = new QLabel(centralWidget);
+        label->setObjectName(QStringLiteral("label"));
+        label->setGeometry(QRect(360, 290, 81, 16));
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
@@ -73,6 +78,7 @@ public:
     {
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButtonBuscar->setText(QApplication::translate("MainWindow", "Buscar", Q_NULLPTR));
+        label->setText(QApplication::translate("MainWindow", "Buscar palabra", Q_NULLPTR));
     } // retranslateUi
 
 };
