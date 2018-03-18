@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Arbollista.cpp
+Arbollista.h
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Arbollista.h
+iostream
+-
+
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Arbollista.h
+Nodo.h
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Nodo.h
+iostream
+-
+
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Nodo.cpp
+Nodo.h
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Nodo.h
+iostream
+-
+
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Nodo.h
+
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/main.cpp
+iostream
+-
+Arbollista.h
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Arbollista.h
+Nodo.h
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/Nodo.h
+

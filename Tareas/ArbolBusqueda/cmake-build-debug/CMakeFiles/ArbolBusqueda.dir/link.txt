@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/ArbolBusqueda.dir/main.cpp.o CMakeFiles/ArbolBusqueda.dir/Nodo.cpp.o CMakeFiles/ArbolBusqueda.dir/Arbollista.cpp.o  -o ArbolBusqueda 

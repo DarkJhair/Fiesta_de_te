@@ -1,0 +1,3 @@
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/jhair/Documentos/IDE Proyectos/Estructura 1.1/Tareas/ArbolBusqueda/cmake-build-debug/CMakeFiles/ArbolBusqueda.dir
