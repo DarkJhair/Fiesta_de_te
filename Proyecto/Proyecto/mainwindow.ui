@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>513</width>
+    <width>740</width>
     <height>490</height>
    </rect>
   </property>
@@ -17,8 +17,8 @@
    <widget class="QPushButton" name="pushButtonBuscar">
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>380</y>
+      <x>570</x>
+      <y>370</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -30,9 +30,9 @@
    <widget class="QTextEdit" name="textEditTweets">
     <property name="geometry">
      <rect>
-      <x>60</x>
+      <x>40</x>
       <y>60</y>
-      <width>261</width>
+      <width>461</width>
       <height>341</height>
      </rect>
     </property>
@@ -40,8 +40,8 @@
    <widget class="QLineEdit" name="lineEditWord">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>310</y>
+      <x>550</x>
+      <y>330</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -50,8 +50,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>360</x>
-      <y>290</y>
+      <x>550</x>
+      <y>310</y>
       <width>81</width>
       <height>16</height>
      </rect>
@@ -60,13 +60,37 @@
      <string>Buscar palabra</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>100</y>
+      <width>181</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>images/twitterbird.jpg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>label_2</zorder>
+   <zorder>pushButtonBuscar</zorder>
+   <zorder>textEditTweets</zorder>
+   <zorder>lineEditWord</zorder>
+   <zorder>label</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>513</width>
+     <width>740</width>
      <height>21</height>
     </rect>
    </property>

@@ -48,10 +48,11 @@ public class TwitterPrueba {
         String fileWord;
         try {
             Scanner reader = new Scanner(word);
+            file.delete();
+            file.createNewFile();
             fileWord = reader.nextLine(); //se lee la palabra del archivo
             FileWriter fw = new FileWriter(file);
-            fw.write("");
-         
+            //fw.write("");
          Query que= new Query(fileWord); //se le manda de parametro la palabra
          QueryResult result;
        

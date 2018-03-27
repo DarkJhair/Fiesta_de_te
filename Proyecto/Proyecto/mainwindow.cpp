@@ -23,7 +23,7 @@ void MainWindow::on_pushButtonBuscar_clicked()
     */
     QFile write("C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Proyecto/Proyecto/TwitterPrueba/word.txt");
     if(!write.open(QIODevice::WriteOnly | QIODevice::Text)) {
-        ui->textEditTweets->append("No sirve");
+        ui->textEditTweets->append("No sirve escribir");
         return;
     }
     QTextStream out(&write);
@@ -36,7 +36,7 @@ void MainWindow::on_pushButtonBuscar_clicked()
     //ahora que ya se ha ejecutado el .jar, vamos a leer los tweets que se guardaron en tweets.txt
     QFile file("C:/Unitec/Estructura de Datos 1 (segundo intento)/Fiesta de te/Proyecto/Proyecto/TwitterPrueba/tweets.txt");
     if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        ui->textEditTweets->append("No sirve");
+        ui->textEditTweets->append("No sirve leer");
         return;
     }
 

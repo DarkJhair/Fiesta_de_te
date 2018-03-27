@@ -34,6 +34,7 @@ public:
     QTextEdit *textEditTweets;
     QLineEdit *lineEditWord;
     QLabel *label;
+    QLabel *label_2;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -42,25 +43,35 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QStringLiteral("MainWindow"));
-        MainWindow->resize(513, 490);
+        MainWindow->resize(740, 490);
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
         pushButtonBuscar = new QPushButton(centralWidget);
         pushButtonBuscar->setObjectName(QStringLiteral("pushButtonBuscar"));
-        pushButtonBuscar->setGeometry(QRect(380, 380, 75, 23));
+        pushButtonBuscar->setGeometry(QRect(570, 370, 75, 23));
         textEditTweets = new QTextEdit(centralWidget);
         textEditTweets->setObjectName(QStringLiteral("textEditTweets"));
-        textEditTweets->setGeometry(QRect(60, 60, 261, 341));
+        textEditTweets->setGeometry(QRect(40, 60, 461, 341));
         lineEditWord = new QLineEdit(centralWidget);
         lineEditWord->setObjectName(QStringLiteral("lineEditWord"));
-        lineEditWord->setGeometry(QRect(360, 310, 113, 20));
+        lineEditWord->setGeometry(QRect(550, 330, 113, 20));
         label = new QLabel(centralWidget);
         label->setObjectName(QStringLiteral("label"));
-        label->setGeometry(QRect(360, 290, 81, 16));
+        label->setGeometry(QRect(550, 310, 81, 16));
+        label_2 = new QLabel(centralWidget);
+        label_2->setObjectName(QStringLiteral("label_2"));
+        label_2->setGeometry(QRect(530, 100, 181, 151));
+        label_2->setPixmap(QPixmap(QString::fromUtf8("images/twitterbird.jpg")));
+        label_2->setScaledContents(true);
         MainWindow->setCentralWidget(centralWidget);
+        label_2->raise();
+        pushButtonBuscar->raise();
+        textEditTweets->raise();
+        lineEditWord->raise();
+        label->raise();
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 513, 21));
+        menuBar->setGeometry(QRect(0, 0, 740, 21));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -79,6 +90,7 @@ public:
         MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", Q_NULLPTR));
         pushButtonBuscar->setText(QApplication::translate("MainWindow", "Buscar", Q_NULLPTR));
         label->setText(QApplication::translate("MainWindow", "Buscar palabra", Q_NULLPTR));
+        label_2->setText(QString());
     } // retranslateUi
 
 };
