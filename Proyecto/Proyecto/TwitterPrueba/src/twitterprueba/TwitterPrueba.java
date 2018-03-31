@@ -18,7 +18,12 @@ import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.*;
 import java.util.Scanner;
+import jdk.nashorn.api.scripting.JSObject;
 import sun.awt.FwDispatcher;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 
 /**
  *
@@ -38,20 +43,62 @@ public class TwitterPrueba {
         cb.setOAuthConsumerSecret("bblOp5MFJ4BFsIBewBuXmMZiahPo0gXM4HT6Lz1ZZgMHY0lkI0");
         cb.setOAuthAccessToken("3177506198-o5rYWh6c8s1KCpx6eKhZqSwVWceAbfKcaHMTQk6");
         cb.setOAuthAccessTokenSecret("QM7ChjUxyNPJGAntMKnvBs7AxOmoGKarDtnINWFWb6QdZ");
+        
+        //Probando Json
+        //*****************
+        
+        
+       /* JSONArray list = new JSONArray();
+        list.add("primer tag");
+        list.add("segundo tag");
+        
+        obj.put("Tags", list);
+        JSONObject inter= new JSONObject();
+        */
+        
+       //******************
+        
+        int contas=0,c=1;
+        JSONObject obj = new JSONObject();
         TwitterFactory tf = new TwitterFactory(cb.build());
         Twitter twitter = tf.getInstance();
         String usuario="jhair001";
         //aqui ponemos el file donde guardamos los tweets
         File file = new File("tweets.txt");
+        File json1 = new File("tweets1.json"); 
+       
         //la palabra de los tweets que se quiere buscar
         File word = new File("word.txt");
         String fileWord;
+        
+        /*if (json1.exists()){
+              json1 = new File("");
+              for (int i = 0; i < contas; i++) {
+                contas++;
+            }
+        }     
+        */
+        
+        
         try {
+            
+            
             Scanner reader = new Scanner(word);
             file.delete();
             file.createNewFile();
+            
             fileWord = reader.nextLine(); //se lee la palabra del archivo
+            
+            
             FileWriter fw = new FileWriter(file);
+            
+            //json
+            //***********
+            FileWriter file1 = new FileWriter(json1);
+            
+            
+            //***********
+            
             //fw.write("");
          Query que= new Query(fileWord); //se le manda de parametro la palabra
          QueryResult result;
@@ -69,8 +116,13 @@ public class TwitterPrueba {
                         +"<<<  >>> "+status.getUser().getName());
                 fw.write(status.getUser().getScreenName()+"<<<  >>> "+status.getText()+"<<<  >>> "+status.getUser().getTimeZone()
                         +"<<<  >>> "+status.getUser().getName());
+                obj.put(status.getUser().getScreenName(), status.getText());//coloco los datos en el archivo json
             }
+            
             fw.close();
+            file1.write(obj.toJSONString());
+            file1.flush();
+            file1.close();
                 //System.out.println(tweet);   
            /* for (int i = 0; i < 5; i++) {
                 System.out.println(user.getName()+"<<<  >>> "+user.getScreenName() +"<<<  >>> "+ user.getStatus());
