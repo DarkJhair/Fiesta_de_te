@@ -17,7 +17,7 @@ import twitter4j.TwitterException;
 import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.*;
-import java.util.Scanner;
+import javax.swing.JOptionPane;
 import jdk.nashorn.api.scripting.JSObject;
 import sun.awt.FwDispatcher;
 
@@ -68,8 +68,9 @@ public class TwitterPrueba {
         File json1 = new File("tweets1.json"); 
        
         //la palabra de los tweets que se quiere buscar
-        File word = new File("word.txt");
-        String fileWord;
+        //File word = new File("word.txt");
+        String fileWord = JOptionPane.showInputDialog(null, "Palabra que "
+                + "desea buscar");
         
         /*if (json1.exists()){
               json1 = new File("");
@@ -83,11 +84,11 @@ public class TwitterPrueba {
         try {
             
             
-            Scanner reader = new Scanner(word);
+            //Scanner reader = new Scanner(word);
             file.delete();
             file.createNewFile();
             
-            fileWord = reader.nextLine(); //se lee la palabra del archivo
+            //fileWord = reader.nextLine(); //se lee la palabra del archivo
             
             
             FileWriter fw = new FileWriter(file);
